@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 import * as firebase from 'firebase';
 
 export class Notes extends Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
         removeNote(id) {
             firebase.database().ref('notes').child(id).remove();
         }
-        
+
     render() {
         return (
-            <section className='notes-wrapper'>
-                <h3>Notes</h3>
+            <section className='week'>
+                <h3>Note</h3>
                 <div className='notes'>
                     {this.props.notes.map(note => (
                         <div className="note" key={note.id}>
